@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Twit</title>
+    <title>Ed's Twit Site</title>
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
  <!-- app/views/layouts/application.html.erb -->
+  </head>
+
 <body>
+  
+ 
+    
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -49,5 +54,9 @@
   <div class="container">
     <%= yield %>
   </div>
+      
 </body>
+  <footer>
+    <p><center>From World Events and Breaking News to Happy Things, Leave your thoughts Here !</center></p>
+  </footer> 
 </html>

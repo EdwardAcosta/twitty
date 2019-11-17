@@ -1,9 +1,22 @@
-<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  
+   
+    <h1>Edward's Twitter Project</h1>
+   
+
+  <div align = "right"
+
+      <h3>Login</h3>
+      <br>
+      <br>
+      
+        
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, 
+        autocomplete: "email" %>
+    
   </div>
 
   <div class="field">
@@ -24,3 +37,6 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
+<link rel="apple-touch-icon" href="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" sizes="192x192">
