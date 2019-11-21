@@ -1,5 +1,27 @@
 class EpicenterController < ApplicationController
-  def feed
+  
+  def following
+    @user = User.find(params[:id])
+    @users = []
+
+    User.all.each do |user|
+      if @user.following.include?(user.id)
+        @users.push(user)
+      end
+    end
+  end
+
+  def followers
+    @user =  User.find(params[:id])
+    @users = []
+
+    User.all.each do |user|
+      if user.following.include?(@user.id)
+        @users.push(user)
+      end
+    end
+  end
+    def feed
     @following_tweets = []
 
     Tweet.all.each do |tweet|
@@ -13,10 +35,19 @@ end
     @tag = Tag.find(params[:id])
 end
 
-    def show_user
-    @user = User.find(params[:id])
-  end
- 
+     def show_user
+     @user =  User.find(params[:id])
+     # @user = User.order(:name)
+    end
+        def all_users
+        @users = User.order(:name)
+      #@users = User.all
+      # or:
+      # User.order(:username)
+       
+      # or whatever order you'd
+      # like to put them in
+    end
 
 
   def now_following
@@ -38,5 +69,5 @@ end
   end
  
 
-end
+ end
 
